@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { ContinentServiceService } from 'src/app/services/continent-service.service';
-import { Continent } from 'src/app/model/continent';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-continent',
@@ -8,19 +9,22 @@ import { Continent } from 'src/app/model/continent';
   styleUrls: ['./continent.component.css']
 })
 export class ContinentComponent implements OnInit {
-  continent:string [];
-
-  constructor(private swService: ContinentServiceService) { }
+    continent:string [];
+    paramCont:string;
+  constructor(private continentService: ContinentServiceService) { }
 
   ngOnInit() {
     this.continent;
     this.showAllContinent();
   }
   showAllContinent() {
-    this.swService.showAll()
+    this.continentService.showAll()
       .subscribe((res) => {
         this.continent = res.body;
       });
-
+    }
+addContinent(paramCont:string){
+  this.paramCont=paramCont;
+ 
 }
 }

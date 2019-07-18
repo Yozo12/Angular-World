@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContinentServiceService {
+  navigate: any;
 
   constructor(private http: HttpClient) { }
   showAll():Observable<any> {
