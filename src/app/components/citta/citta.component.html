@@ -1,3 +1,5 @@
-<h1>CITTA</h1>
+<h1>CITTA <button (click)="goBack()">torna alla home</button> </h1>
 
-<p *ngFor="let c of city " > {{c. cityName}}-{{c.population}}</p>
+<div *ngFor="let c of city ">
+    <button (click)="deleteCity(c.id)">elimina</button>
+    {{c. cityName}}-{{c.population}}</div>

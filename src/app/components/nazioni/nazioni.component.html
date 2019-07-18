@@ -1,4 +1,3 @@
-<h1> Nazioni  </h1>
+<h1> Nazioni <button (click)="goBack()">torna ai continenti</button> </h1>
 
 <p *ngFor="let n of nation" (click)="goToCityByCodeCountry(n.codNation)">{{n.nameNation}}-{{n.population}} </p>
-<button (click)="goBack()">torna ai continenti</button>

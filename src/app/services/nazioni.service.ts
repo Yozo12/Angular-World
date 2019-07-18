@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
-  
+
 })
 export class NazioniService {
- 
+  currentNation: string;
   constructor(private http: HttpClient) { }
-  nationByContinent(continent:string): Observable<any> {
-   
-    let resp = this.http.get<any>('http://localhost:8080/nazioni?continent='+continent, { observe: 'response' });
+  nationByContinent(continent: string): Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/nazioni?continent=' + continent, { observe: 'response' });
     return resp;
-}
+  }
 }
