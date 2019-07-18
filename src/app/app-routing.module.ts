@@ -6,12 +6,13 @@ import { NazioniComponent } from './components/nazioni/nazioni.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: ContinentComponent
   },
   {
-    path:'nazioni/:continent',
-  component: NazioniComponent  }
+    path: 'nazioni/:continent',
+    component: NazioniComponent
+  }
 ];
 
 @NgModule({
