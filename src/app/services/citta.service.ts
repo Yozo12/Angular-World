@@ -2,6 +2,7 @@ import { Injectable, forwardRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Constant } from '../const/constant';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class CittaService {
 
   deleteCity(id: number): Observable<any> {
     let resp = this.http.delete('http://localhost:8080/citta/elimina?id=' + id, { observe: 'response' });
+    return resp;
+  }
+  ordinaCity(codNation:string,ord:string):Observable<any>{
+    let resp=this.http.get<any>('http://localhost:8080/citta?codNazione='+codNation +'&ord='+ord,{ observe: 'response' }) ;
     return resp;
   }
 }
