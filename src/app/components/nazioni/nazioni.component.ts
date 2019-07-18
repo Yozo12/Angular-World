@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Country } from 'src/app/model/country';
 import { NazioniService } from 'src/app/services/nazioni.service';
-import { ConsoleReporter } from 'jasmine';
+
 
 @Component({
   selector: 'app-nazioni',
