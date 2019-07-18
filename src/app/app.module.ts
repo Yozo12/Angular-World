@@ -8,19 +8,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContinentServiceService } from './services/continent-service.service';
 import { NazioniComponent } from './components/nazioni/nazioni.component';
 import { NazioniService } from './services/nazioni.service';
+import { CittaComponent } from './components/citta/citta.component';
+import { CittaService } from './services/citta.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContinentComponent,
-    NazioniComponent
+    NazioniComponent,
+    CittaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ContinentServiceService,NazioniService],
+  providers: [ContinentServiceService,NazioniService,CittaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContinentComponent } from './components/continent/continent.component';
 import { NazioniComponent } from './components/nazioni/nazioni.component';
+import { CittaComponent } from './components/citta/citta.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'nazioni/:continent',
     component: NazioniComponent
+  },
+  {
+    path:'citta/:codeCountry',
+    component:CittaComponent
   }
 ];
 
