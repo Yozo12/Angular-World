@@ -1,14 +1,17 @@
 import { Injectable, forwardRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Constant } from '../const/constant';
+import { City } from '../model/city';
+import { Body } from '../model/body';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CittaService {
-
+currentCityid:number;
+ params=new HttpParams();
   constructor(private http: HttpClient, private route: Router) { }
 
   allCities(nation: string): Observable<any> {
@@ -25,4 +28,16 @@ export class CittaService {
     let resp=this.http.get<any>('http://localhost:8080/citta?codNazione='+codNation +'&ord='+ord,{ observe: 'response' }) ;
     return resp;
   }
+  loadCity(id:number):Observable<any>{
+    let resp=this.http.get<any>('http://localhost:8080/citta/load?id='+id,{ observe: 'response' }) ;
+    return resp;
+  }
+ 
+addModCity(paramBody:Body):Observable<any>{
+  return this.http.post<any>('http://localhost:8080/citta',paramBody);
+
+  
+  
+  
 }
+  }

@@ -52,9 +52,7 @@ export class CittaComponent implements OnInit {
 
   }
   ordinaCity(ord:string){
-    
-
-this.cityService.ordinaCity(this.nationService.currentNation,ord).subscribe((res)=>{
+    this.cityService.ordinaCity(this.nationService.currentNation,ord).subscribe((res)=>{
   if (ord==(Constant.AZ) ){
     this.AZ = Constant.ZA;
   } else {
@@ -67,6 +65,13 @@ this.cityService.ordinaCity(this.nationService.currentNation,ord).subscribe((res
   }
   this.city=res.body as City[];
 });
-
   }
-}
+
+  goToModPage(id:number){
+      this.router.navigate(['modifica-aggiungi',id]);
+    };
+
+    goToAddPage(){
+      this.router.navigate(['modifica-aggiungi']);
+    };
+  }

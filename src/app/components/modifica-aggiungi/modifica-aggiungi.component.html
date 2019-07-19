@@ -1,0 +1,18 @@
+        <h1 align="center">{{titolo}}</h1>
+           
+             <form >
+                   NOME CITTA
+                   <div><input [name]="'newCity'" type="text" value={{city.cityName}}
+                        size="40" maxlength="200"  /><br> </div>
+                        POPOLAZIONE<input
+                        name="newPopulation" type="text" value={{city.population}}
+                        size="40" maxlength="200" /><br> 
+                      NAZIONE <select name= "newCodNation"  >
+                          <option value={{c.codNation}} *ngFor="let c of countries "[selected]="c.codNation===city.codNation">{{c.nameNation}}</option>
+                                       
+                      </select> 
+                      <input name="id" type="hidden" value={{city.id}}><br>
+                      <input type="button" value="Aggiungi!"(click)="modAdd( newCity,newPopulation, newCodNation ,id)" >
+             </form>   
+                
+          

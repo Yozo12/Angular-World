@@ -10,13 +10,15 @@ import { NazioniComponent } from './components/nazioni/nazioni.component';
 import { NazioniService } from './services/nazioni.service';
 import { CittaComponent } from './components/citta/citta.component';
 import { CittaService } from './services/citta.service';
+import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContinentComponent,
     NazioniComponent,
-    CittaComponent
+    CittaComponent,
+    ModificaAggiungiComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
-<h1 align="center">CITTA   <button (click)="ordinaCity(AZ)">{{AZ}}</button> <button (click)="ordinaCity(POPA)">{{POPA}}</button></h1>
+<h1 align="center">CITTA  </h1>  <h1 align="center">orinda per <button (click)="ordinaCity(AZ)">{{AZ}}</button> <button (click)="ordinaCity(POPA)">{{POPA}}</button></h1>
 
-<div align="center" *ngFor="let c of city ; let i = index" [attr.data-index]="i">
+<div align="center" *ngFor="let c of city ">
     <button (click)="deleteCity(c.id)">elimina</button>
-    {{c. cityName}}-{{c.population}}</div>
+    {{c. cityName}}-{{c.population}}
+    <button (click)=" goToModPage(c.id)">modifica</button></div>
     <button (click)="goBack()">torna alla home</button>
+    <button (click)=" goToAddPage()">Aggiungi città</button>

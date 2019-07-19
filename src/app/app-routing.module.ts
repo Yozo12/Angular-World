@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContinentComponent } from './components/continent/continent.component';
 import { NazioniComponent } from './components/nazioni/nazioni.component';
 import { CittaComponent } from './components/citta/citta.component';
+import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,16 @@ const routes: Routes = [
     component: NazioniComponent
   },
   {
-    path:'citta/:codeCountry',
-    component:CittaComponent
+    path: 'citta/:codeCountry',
+    component: CittaComponent
+  },
+  {
+    path: 'modifica-aggiungi/:id',
+    component: ModificaAggiungiComponent
+  },
+  {
+      path:'modifica-aggiungi',
+      component: ModificaAggiungiComponent
   }
 ];
 
