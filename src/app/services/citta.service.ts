@@ -35,7 +35,7 @@ export class CittaService {
 
   addModCity(paramBody: Body): Observable<any> {
 
-    let resp = this.http.post<any>('http://localhost:8080/citta', { params: paramBody, observe: 'response' });
+    let resp = this.http.post<any>('http://localhost:8080/citta',  paramBody,{observe: 'response' });
     return resp;
 
 
