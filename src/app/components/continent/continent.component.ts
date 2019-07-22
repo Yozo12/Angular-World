@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./continent.component.css']
 })
 export class ContinentComponent implements OnInit {
-    continent:string [];
-    paramCont:string;
+  continent: string[];
+  paramCont: string;
   constructor(private continentService: ContinentServiceService, private router: Router) { }
 
   ngOnInit() {
@@ -22,10 +22,10 @@ export class ContinentComponent implements OnInit {
       .subscribe((res) => {
         this.continent = res.body;
       });
-    }
-addContinent(paramCont:string){
-  this.paramCont=paramCont;
-  this.router.navigate(['nazioni',this.paramCont])
-  
-}
+  }
+  addContinent(paramCont: string) {
+    this.paramCont = paramCont;
+    this.router.navigate(['nazioni', this.paramCont])
+
+  }
 }

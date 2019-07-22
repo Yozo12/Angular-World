@@ -9,7 +9,7 @@ export class ContinentServiceService {
   navigate: any;
 
   constructor(private http: HttpClient) { }
-  showAll():Observable<any> {
+  showAll(): Observable<any> {
     let resp = this.http.get<any>('http://localhost:8080/continent', { observe: 'response' });
     return resp;
   }

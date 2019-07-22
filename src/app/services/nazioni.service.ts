@@ -16,8 +16,8 @@ export class NazioniService {
     return resp;
   };
 
-  allCountries(): Observable<any>{
-    let resp=this.http.get<any>('http://localhost:8080/allnazioni',{ observe: 'response' });
+  allCountries(): Observable<any> {
+    let resp = this.http.get<any>('http://localhost:8080/allnazioni', { observe: 'response' });
     return resp;
   }
 }

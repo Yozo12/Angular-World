@@ -24,8 +24,8 @@ const routes: Routes = [
     component: ModificaAggiungiComponent
   },
   {
-      path:'modifica-aggiungi',
-      component: ModificaAggiungiComponent
+    path: 'modifica-aggiungi',
+    component: ModificaAggiungiComponent
   }
 ];
 
