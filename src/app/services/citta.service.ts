@@ -34,8 +34,8 @@ currentCityid:number;
   }
  
 addModCity(paramBody:Body):Observable<any>{
-  return this.http.post<any>('http://localhost:8080/citta',paramBody);
-
+  let resp= this.http.post<any>('http://localhost:8080/citta',{ params:paramBody,observe: 'response'});
+return resp;
   
   
   

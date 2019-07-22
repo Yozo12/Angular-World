@@ -1,18 +1,14 @@
-        <h1 align="center">{{titolo}}</h1>
-           
-             <form >
-                   NOME CITTA
-                   <div><input [name]="'newCity'" type="text" value={{city.cityName}}
-                        size="40" maxlength="200"  /><br> </div>
-                        POPOLAZIONE<input
-                        name="newPopulation" type="text" value={{city.population}}
-                        size="40" maxlength="200" /><br> 
-                      NAZIONE <select name= "newCodNation"  >
-                          <option value={{c.codNation}} *ngFor="let c of countries "[selected]="c.codNation===city.codNation">{{c.nameNation}}</option>
-                                       
-                      </select> 
-                      <input name="id" type="hidden" value={{city.id}}><br>
-                      <input type="button" value="Aggiungi!"(click)="modAdd( newCity,newPopulation, newCodNation ,id)" >
-             </form>   
-                
-          
+<h1 align="center">{{titolo}}</h1>
+
+<form>
+  NOME CITTA
+  <div><input  [(ngModel)]="city.cityName"[name]="'newCity'" type="text" value={{city.cityName}} size="40" maxlength="200" /><br> </div>
+  POPOLAZIONE<input [(ngModel)]="city.population" name="newPopulation" type="text" value={{city.population}} size="40" maxlength="200" /><br>
+  NAZIONE <select name="newCodNation" [(ngModel)]="city.codNation">
+    <option  value={{c.codNation}} *ngFor="let c of countries  " [selected]="c.codNation===city.codNation">
+      {{c.nameNation}}</option >
+
+  </select>
+  <input [(ngModel)]="city.id" name="id" type="hidden" value={{city.id}}><br>
+  <input type="button" value="Aggiungi!" (click)="modAdd(city.cityName,city.population,city.codNation,city.id )">
+</form>

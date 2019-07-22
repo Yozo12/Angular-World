@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule}from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { CittaComponent } from './components/citta/citta.component';
 import { CittaService } from './services/citta.service';
 import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +27,12 @@ import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
+
   ],
-  providers: [ContinentServiceService,NazioniService,CittaService],
+  providers: [ContinentServiceService, NazioniService, CittaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
