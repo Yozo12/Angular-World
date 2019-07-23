@@ -4,7 +4,7 @@
 
 <div align="center" *ngFor="let c of city ">
     <button (click)="deleteCity(c.id)">elimina</button>
-    {{c. cityName}}-{{c.population}}
+    {{c.name}}-{{c.population}}
     <button (click)=" goToModPage(c.id)">modifica</button></div>
 <button (click)="goBack()">torna alla home</button>
 <button (click)=" goToAddPage()">Aggiungi città</button>
