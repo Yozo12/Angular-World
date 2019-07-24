@@ -2,15 +2,15 @@
 
 <form>
   NOME CITTA
-  <div><input [(ngModel)]="city.cityName" [name]="'newCity'" type="text" value={{city.cityName}} size="40"
+  <div><input [(ngModel)]="city.name" [name]="'newCity'" type="text" value={{city.name}} size="40"
       maxlength="200" /><br> </div>
   POPOLAZIONE<input [(ngModel)]="city.population" name="newPopulation" type="text" value={{city.population}} size="40"
     maxlength="200" /><br>
-  NAZIONE <select name="newCodNation" [(ngModel)]="city.codNation">
-    <option value={{c.codNation}} *ngFor="let c of countries  " [selected]="c.codNation===city.codNation">
-      {{c.nameNation}}</option>
+  NAZIONE <select name="newCodNation" [(ngModel)]="city.codeCountry">
+    <option value={{c.code}} *ngFor="let c of countries  " [selected]="c.code===city.codeCountry">
+      {{c.name}}</option>
 
   </select>
   <input [(ngModel)]="city.id" name="id" type="hidden" value={{city.id}}><br>
-  <input type="button" value="Aggiungi!" (click)="modAdd(city.cityName,city.population,city.codNation,city.id )">
+  <input type="button" value="Aggiungi!" (click)="modAdd(city.name,city.population,city.codeCountry,city.id )">
 </form>
