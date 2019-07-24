@@ -49,7 +49,7 @@ export class ModificaAggiungiComponent implements OnInit {
   modAdd(newCity: string, newPopulation: number, newCodNation: string, id: number) {
     let paramBody = new Body(newCity, newPopulation, newCodNation, id)
     this.cityService.addModCity(paramBody).subscribe((res) => {
-      this.router.navigate(['citta', paramBody.codNation]);
+      this.router.navigate(['citta', paramBody.codeCountry]);
     });
   }
 }

@@ -2,9 +2,9 @@
 
 export class Body {
   constructor(
-    public cityName: string,
+    public name: string,
     public population: number,
-    public codNation: string,
+    public codeCountry: string,
     public id: number,
   ) { }
 }
