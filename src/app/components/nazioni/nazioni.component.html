@@ -1,11 +1,10 @@
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb p-3 mb-2 bg-warning ">
-            <li class="breadcrumb-item active"><button [routerLink]="['']" class="text-primary"
-                    class="btn btn-secondary text-warning"  align="center" > Torna ai
-                    continenti</button></li>
-        </ol>
-    </nav>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb p-3 mb-2 bg-warning ">
+        <li class="breadcrumb-item active"><button [routerLink]="['']" class="text-primary"
+                class="btn btn-secondary text-warning" align="center"> Torna ai
+                continenti</button></li>
+    </ol>
+</nav>
 
 
 <body
@@ -13,13 +12,13 @@
     <span align="center" class="d-block p-2 bg-warning text-white">Nazioni</span>
 
     <div align="right" class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Benvenuto nelle nazioni del continente <span class="badge badge-secondary text-warning">{{continent}}</span></strong> Seleziona una nazione per visualizzarne le città.
-        </div>
+        <strong>Benvenuto nelle nazioni del continente <span
+                class="badge badge-secondary text-warning">{{continent}}</span></strong> Seleziona una nazione per
+        visualizzarne le città.
+    </div>
 
     <p align="center" *ngFor="let n of nation" (click)="goToCityByCodeCountry(n.code)"><button type="button"
             class="btn btn-warning btn-sm"> {{n.name}}-{{n.population}}</button>
     </p>
-    
+
 </body>
-
-

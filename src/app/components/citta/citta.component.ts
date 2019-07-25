@@ -14,7 +14,7 @@ import { Country } from 'src/app/model/country';
 })
 export class CittaComponent implements OnInit {
   city: City[];
-  nation:Country[];
+  nation: Country[];
   AZ = Constant.AZ;
   POPA = Constant.POPA;
   constructor(private cityService: CittaService,
@@ -24,16 +24,16 @@ export class CittaComponent implements OnInit {
 
 
   ngOnInit() {
-    this.nation=[];
+    this.nation = [];
     this.city = [];
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.nationService.currentNation = params.get('codeCountry');
       this.showAllCities();
-      this.getNameNation( this.nationService.currentNation);
-    }); 
-   
+      this.getNameNation(this.nationService.currentNation);
+    });
+
   }
-  
+
   showAllCities() {
     this.cityService.allCities(this.nationService.currentNation)
       .subscribe((res) => {
@@ -80,12 +80,12 @@ export class CittaComponent implements OnInit {
     this.router.navigate(['modifica-aggiungi']);
   };
 
-  getNameNation(codeCountry:string){
-   
-    this.cityService.getNation( codeCountry) .subscribe((res) => {
+  getNameNation(codeCountry: string) {
+
+    this.cityService.getNation(codeCountry).subscribe((res) => {
       this.nation = res.body as Country[];
 
     });
-  
-} 
+
+  }
 }

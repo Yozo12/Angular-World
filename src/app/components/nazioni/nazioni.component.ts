@@ -22,7 +22,7 @@ export class NazioniComponent implements OnInit {
       this.continent = params.get('continent');
 
       this.showAllCountries();
-      
+
     });
 
 
