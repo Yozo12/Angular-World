@@ -29,7 +29,7 @@ export class ModificaAggiungiComponent implements OnInit {
     });
     if (this.cityService.currentCityid > 0) {
       this.loadCity(this.cityService.currentCityid);
-      this.titolo = 'Modifica Città';
+      this.titolo = 'Modifica Città ';
     } else {
       this.titolo = 'Aggiungi Città';
     }
