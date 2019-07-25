@@ -28,7 +28,8 @@ import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifi
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   
 
 
   ],

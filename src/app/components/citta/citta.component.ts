@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NazioniService } from 'src/app/services/nazioni.service';
 import { Constant } from 'src/app/const/constant';
 import { stringify } from '@angular/compiler/src/util';
+import { Country } from 'src/app/model/country';
 
 @Component({
   selector: 'app-citta',
@@ -13,6 +14,7 @@ import { stringify } from '@angular/compiler/src/util';
 })
 export class CittaComponent implements OnInit {
   city: City[];
+  nation:Country[];
   AZ = Constant.AZ;
   POPA = Constant.POPA;
   constructor(private cityService: CittaService,
@@ -22,13 +24,16 @@ export class CittaComponent implements OnInit {
 
 
   ngOnInit() {
+    this.nation=[];
     this.city = [];
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.nationService.currentNation = params.get('codeCountry');
       this.showAllCities();
-    });
+      this.getNameNation( this.nationService.currentNation);
+    }); 
+   
   }
-
+  
   showAllCities() {
     this.cityService.allCities(this.nationService.currentNation)
       .subscribe((res) => {
@@ -74,4 +79,13 @@ export class CittaComponent implements OnInit {
   goToAddPage() {
     this.router.navigate(['modifica-aggiungi']);
   };
+
+  getNameNation(codeCountry:string){
+   
+    this.cityService.getNation( codeCountry) .subscribe((res) => {
+      this.nation = res.body as Country[];
+
+    });
+  
+} 
 }

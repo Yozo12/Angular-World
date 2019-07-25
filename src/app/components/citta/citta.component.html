@@ -1,10 +1,36 @@
-<h1 align="center">CITTA </h1>
-<h1 align="center">orinda per <button (click)="ordinaCity(AZ)">{{AZ}}</button> <button
-        (click)="ordinaCity(POPA)">{{POPA}}</button></h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb  p-3 mb-2 bg-warning">
+        <li class="breadcrumb-item "><button [routerLink]="['']" class="btn btn-secondary text-warning">torna ai
+                continenti</button>
+        </li>
+        <li class="breadcrumb-item"> <button (click)=" goToAddPage()" class="btn btn-secondary text-warning">
+                Aggiungi città</button>
+        </li>
 
-<div align="center" *ngFor="let c of city ">
-    <button (click)="deleteCity(c.id)">elimina</button>
-    {{c.name}}-{{c.population}}
-    <button (click)=" goToModPage(c.id)">modifica</button></div>
-<button (click)="goBack()">torna alla home</button>
-<button (click)=" goToAddPage()">Aggiungi città</button>
+    </ol>
+
+
+
+    <body
+        background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEX9+Mb////9+MP9+cz+++L9+crq3xJ/AAAAf0lEQVR4nO3SgQkDMAwDQSux91+5hc4QUsLdBC9QJb3rVdNJZa/bHQetneqXB34ndr170Z+5HQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN+a2wGHTfW63XDU6sp+eeKaVNLvHnU6+QApDwBvvbdfsAAAAABJRU5ErkJggg==">
+        <span align="center" class="d-block p-2 bg-warning text-secondary">CITTA</span>
+        <div align="center" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Benvenuto nelle citta di <span class="badge badge-secondary text-warning">{{nation.name}}</span> </strong>
+        </div>
+      
+
+        <span align="center" class="d-block p-2 bg-warning text-secondary">ORDINA PER
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary text-warning" (click)="ordinaCity(AZ)">{{AZ}}</button>
+                <button type="button" class="btn btn-secondary text-warning"
+                    (click)="ordinaCity(POPA)">{{POPA}}</button>
+
+            </div></span>
+
+
+
+        <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
+            <button (click)="deleteCity(c.id)" class="btn btn-secondary text-warning">elimina</button>
+            {{c.name}}-{{c.population}}
+            <button (click)=" goToModPage(c.id)" class="btn btn-secondary text-warning">modifica</button></div>
+    </body>

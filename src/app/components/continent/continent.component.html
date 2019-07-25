@@ -1,2 +1,17 @@
-<h1> continent </h1>
-<p *ngFor="let c of continent" (click)="addContinent(c)"> {{c}} </p>
+<body background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEX9+Mb////9+MP9+cz+++L9+crq3xJ/AAAAf0lEQVR4nO3SgQkDMAwDQSux91+5hc4QUsLdBC9QJb3rVdNJZa/bHQetneqXB34ndr170Z+5HQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN+a2wGHTfW63XDU6sp+eeKaVNLvHnU6+QApDwBvvbdfsAAAAABJRU5ErkJggg==">
+    <div align="center">
+            <div class="p-3 mb-2 bg-warning text-dark"> <h1>continent</h1></div>
+
+          
+       
+        <ul class="list-group">
+            <div *ngFor="let c of continent" (click)="addContinent(c)" class="list-group-item list-group-item-warning ">
+                <button class="btn btn-outline-warning text-dark"> {{c}} </button>
+            </div>
+        </ul>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Benvenuto nei continenti</strong> Seleziona un continente per visualizzarne le nazioni.
+        </div>
+
+    </div>
+</body>

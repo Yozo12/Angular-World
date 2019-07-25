@@ -12,7 +12,7 @@ import { Body } from '../model/body';
 export class CittaService {
   currentCityid: number;
   params = new HttpParams();
-  constructor(private http: HttpClient, private route: Router) { }
+  constructor(private http: HttpClient) { }
 
   allCities(nation: string): Observable<any> {
     let resp = this.http.get<any>('http://localhost:8080/citta/elenco?nazione=' + nation, { observe: 'response' });
@@ -37,8 +37,10 @@ export class CittaService {
 
     let resp = this.http.post<any>('http://localhost:8080/citta',  paramBody,{observe: 'response' });
     return resp;
-
-
-
   }
+  getNation(code:String):Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/nationbycode?code='+code, {observe: 'response' });
+    return resp;
+}
 }
