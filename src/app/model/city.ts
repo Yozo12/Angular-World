@@ -1,6 +1,6 @@
 export class City {
-  cityName: string;
-  population: number;
-  codNation: string;
-  id: number;
+  public cityName: string;
+ public  population: number;
+ public  codNation: string;
+ public  id: number;
 }

@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Constant } from '../const/constant';
 import { City } from '../model/city';
 import { Body } from '../model/body';
+import { Review } from '../model/review';
+import { Author } from '../model/author';
 
 @Injectable({
   providedIn: 'root'
@@ -35,12 +37,32 @@ export class CittaService {
 
   addModCity(paramBody: Body): Observable<any> {
 
-    let resp = this.http.post<any>('http://localhost:8080/citta',  paramBody,{observe: 'response' });
+    let resp = this.http.post<any>('http://localhost:8080/citta', paramBody, { observe: 'response' });
     return resp;
   }
-  getNation(code:String):Observable<any> {
+  getNation(code: String): Observable<any> {
 
-    let resp = this.http.get<any>('http://localhost:8080/nationbycode?code='+code, {observe: 'response' });
+    let resp = this.http.get<any>('http://localhost:8080/nationbycode?code=' + code, { observe: 'response' });
     return resp;
-}
+  }
+  getAuthor(idauthor: number): Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/author?idauthor=' + idauthor, { observe: 'response' });
+    return resp;
+  }
+  getReview(idcity: number): Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/reviewforcity?idcity=' + idcity, { observe: 'response' });
+    return resp;
+  }
+  insertReview(review: Review): Observable<any> {
+
+    let resp = this.http.post<any>('http://localhost:8080/insertreview', review, { observe: 'response' });
+    return resp;
+  }
+  insertAuthor(author: Author): Observable<any> {
+
+    let resp = this.http.post<any>('http://localhost:8080//insertauthor', author, { observe: 'response' });
+    return resp;
+  }
 }

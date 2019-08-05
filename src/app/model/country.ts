@@ -1,6 +1,6 @@
 export class Country {
-    nameContinent: string;
-    nameNation: string;
-    population: number;
-    codNation: string;
+   public nameContinent: string;
+  public  nameNation: string;
+  public  population: number;
+  public  codNation: string;
 }
