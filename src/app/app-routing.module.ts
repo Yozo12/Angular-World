@@ -4,12 +4,20 @@ import { ContinentComponent } from './components/continent/continent.component';
 import { NazioniComponent } from './components/nazioni/nazioni.component';
 import { CittaComponent } from './components/citta/citta.component';
 import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
+import { AutocompleteCityComponent } from './components/autocomplete-city/autocomplete-city.component';
+
+
+
 
 
 const routes: Routes = [
   {
     path: '',
     component: ContinentComponent
+  },
+  {
+    path: 'citiesautocomplete',
+    component: AutocompleteCityComponent,
   },
   {
     path: 'nazioni/:continent',

@@ -1,0 +1,23 @@
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(211, 223, 45);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: lightslategrey
+  }
+  select{
+    width: 40%;
+    padding: 12px 6px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid rgb(211, 223, 45);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background:grey 
+  }
+  .color{
+      background: gold
+  }

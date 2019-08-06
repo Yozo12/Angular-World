@@ -18,7 +18,7 @@
     </div>
 
     <p align="center" *ngFor="let n of nation" (click)="goToCityByCodeCountry(n.code)"><button type="button"
-            class="btn btn-warning btn-sm"> {{n.name}}-{{n.population}}</button>
+            class="btn btn-warning btn-sm"><td><h1>{{n.name}}</h1></td><br><td>popolazione: {{n.population}}</td></button>
     </p>
 
 </body>

@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContinentComponent } from './components/continent/continent.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ContinentServiceService } from './services/continent-service.service';
-import { NazioniComponent } from './components/nazioni/nazioni.component';
-import { NazioniService } from './services/nazioni.service';
 import { CittaComponent } from './components/citta/citta.component';
-import { CittaService } from './services/citta.service';
+import { ContinentComponent } from './components/continent/continent.component';
 import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
-
+import { NazioniComponent } from './components/nazioni/nazioni.component';
+import { CittaService } from './services/citta.service';
+import { ContinentServiceService } from './services/continent-service.service';
+import { NazioniService } from './services/nazioni.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutocompleteCityComponent } from './components/autocomplete-city/autocomplete-city.component'
 
 
 
@@ -22,16 +23,19 @@ import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifi
     ContinentComponent,
     NazioniComponent,
     CittaComponent,
-    ModificaAggiungiComponent
+    ModificaAggiungiComponent,
+    AutocompleteCityComponent,
+
+
   ],
   imports: [
+
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-   
-
-
+    BrowserModule,
   ],
   providers: [ContinentServiceService, NazioniService, CittaService],
   bootstrap: [AppComponent]

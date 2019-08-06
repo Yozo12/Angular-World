@@ -1,0 +1,30 @@
+<body class="color">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div>
+        <span align="center" class="d-block p-2 bg-warning text-secondary">CITTA DI TUTTO IL MONDO!</span>
+        <div align="center" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Benvenuto nelle citta di <span class="badge badge-secondary text-warning">TUTTO IL MONDO!</span>
+            </strong><br>
+            <div align="left"> <button [routerLink]="['']" class="btn btn-secondary text-warning"> torna alla home
+                </button></div><br>
+
+            <div align="right"><input (click)="notDrop()" value="{{text}}" type="text" class="form-control"
+                    placeholder="Search City" (input)="ShearchCity($event.target.value)"></div>
+            <div *ngIf="drop" class="dropdown">
+                <div class="state" align="center" *ngFor="let c of cityLike  ">
+                    <p style="cursor: pointer" (click)=" saveTextSearch(c.name)"> {{c.name}} </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <table align="center">
+        <tr>
+            <td>
+                <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
+                    {{c.name}}</div>
+            </td>
+        </tr>
+    </table>
+</body>

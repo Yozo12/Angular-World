@@ -4,8 +4,8 @@ import { CittaService } from 'src/app/services/citta.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NazioniService } from 'src/app/services/nazioni.service';
 import { Constant } from 'src/app/const/constant';
-import { stringify } from '@angular/compiler/src/util';
 import { Country } from 'src/app/model/country';
+
 
 @Component({
   selector: 'app-citta',
@@ -24,6 +24,7 @@ export class CittaComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.nation = [];
     this.city = [];
     this.route.paramMap.subscribe((params: ParamMap) => {

@@ -1,0 +1,16 @@
+.color{
+    background: gold
+}
+.dropdown{
+    position:absolute;
+    z-index: 1;
+    width: 92%;
+    max-height: 300px;
+    background:lightslategray;
+    overflow-y: auto;
+    }
+    .state{
+        padding:10px;
+        font-family:sans-serif;
+        color:gold
+    }

@@ -1,28 +1,28 @@
-<body
-  background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEX9+Mb////9+MP9+cz+++L9+crq3xJ/AAAAf0lEQVR4nO3SgQkDMAwDQSux91+5hc4QUsLdBC9QJb3rVdNJZa/bHQetneqXB34ndr170Z+5HQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN+a2wGHTfW63XDU6sp+eeKaVNLvHnU6+QApDwBvvbdfsAAAAABJRU5ErkJggg==">
-  
-    <div align="center" class="p-3 mb-2 bg-warning text-dark">
-      <h1>{{titolo}} <span
-        class="badge badge-secondary text-warning">{{city.name}}</span></h1>
+<body>
+  <div class="color">
+    <div align="center" class="p-3 mb-2 bg-warning text-dark ">
+      <h1>{{titolo}} <span class="badge badge-secondary text-warning">{{city.name}}</span></h1>
     </div>
 
 
     <form>
-      <span
-      class="badge badge-secondary text-warning">NOME CITTA</span>
-      <div><input [(ngModel)]="city.name" class="text-warning" [name]="'newCity'" type="text" value={{city.name}} size="40"
-          maxlength="200"  placeholder="Insert Name City" /><br> </div>
-          <span
-          class="badge badge-secondary text-warning">POPOLAZIONE</span><input class=" text-warning"  placeholder="Enter Popolation" [(ngModel)]="city.population" name="newPopulation" type="text" value={{city.population}}
-        size="40" maxlength="200" /><br>
-        <span
-        class="badge badge-secondary text-warning ">NAZIONE</span> <select name="newCodNation" [(ngModel)]="city.codeCountry">
-        <option class="text-warning" value={{c.code}} *ngFor="let c of countries  " [selected]="c.code===city.codeCountry">
+      <span class="badge badge-secondary text-warning">NOME CITTA</span>
+      <div><input [(ngModel)]="city.name" class="text-warning" [name]="'newCity'" type="text" value={{city.name}}
+          size="40" maxlength="200" placeholder="Insert Name City" /><br> </div>
+      <span class="badge badge-secondary text-warning">POPOLAZIONE</span><input class=" text-warning"
+        placeholder="Enter Popolation" [(ngModel)]="city.population" name="newPopulation" type="text"
+        value={{city.population}} size="40" maxlength="200" /><br>
+      <span class="badge badge-secondary text-warning ">NAZIONE</span> <select name="newCodNation"
+        [(ngModel)]="city.codeCountry">
+        <option   class="text-warning" value={{c.code}} *ngFor="let c of countries  "
+          [selected]="c.code===city.codeCountry">
           {{c.name}}</option>
 
       </select>
       <input [(ngModel)]="city.id" name="id" type="hidden" value={{city.id}}><br>
 
-      <button type="button"  class="btn btn-dark  text-warning" (click)="modAdd(city.name,city.population,city.codeCountry,city.id )">Aggiungi!</button>
+      <button type="button" class="btn btn-dark  text-warning"
+        (click)="modAdd(city.name,city.population,city.codeCountry,city.id )">Aggiungi!</button>
     </form>
+  </div>
 </body>

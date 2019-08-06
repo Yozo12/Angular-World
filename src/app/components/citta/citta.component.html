@@ -6,10 +6,12 @@
         <li class="breadcrumb-item"> <button (click)=" goToAddPage()" class="btn btn-secondary text-warning">
                 Aggiungi città</button>
         </li>
+        <li class="breadcrumb-item "><button [routerLink]="['/citiesautocomplete']"
+                class="btn btn-secondary text-warning">cerca tutte le città del mondo e lascia una tua
+                recensione!</button>
+        </li>
 
     </ol>
-
-
 
     <body
         background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEX9+Mb////9+MP9+cz+++L9+crq3xJ/AAAAf0lEQVR4nO3SgQkDMAwDQSux91+5hc4QUsLdBC9QJb3rVdNJZa/bHQetneqXB34ndr170Z+5HQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN+a2wGHTfW63XDU6sp+eeKaVNLvHnU6+QApDwBvvbdfsAAAAABJRU5ErkJggg==">
@@ -18,7 +20,7 @@
             <strong>Benvenuto nelle citta di <span class="badge badge-secondary text-warning">{{nation.name}}</span>
             </strong>
         </div>
-
+<div class="state-container-dropdown"></div>
 
         <span align="center" class="d-block p-2 bg-warning text-secondary">ORDINA PER
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -27,11 +29,13 @@
                     (click)="ordinaCity(POPA)">{{POPA}}</button>
 
             </div></span>
-
-
-
         <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
-            <button (click)="deleteCity(c.id)" class="btn btn-secondary text-warning">elimina</button>
-            {{c.name}}-{{c.population}}
-            <button (click)=" goToModPage(c.id)" class="btn btn-secondary text-warning">modifica</button></div>
+            <td> <button (click)="deleteCity(c.id)" class="btn btn-secondary text-warning">elimina</button></td>
+            <tr></tr>
+            <td>{{c.name}}</td>
+            <td>{{c.population}}</td>
+            <tr></tr>
+            <td><button (click)=" goToModPage(c.id)" class="btn btn-secondary text-warning">modifica</button></td>
+        </div>
+
     </body>
