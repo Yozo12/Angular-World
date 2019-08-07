@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { City } from 'src/app/model/city';
 import { CittaService } from 'src/app/services/citta.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autocomplete-city',
@@ -29,7 +30,7 @@ export class AutocompleteCityComponent implements OnInit {
   text: string;
   modalCity: City;
 
-  constructor(private cityService: CittaService, config: NgbModalConfig, private modal: NgbModal) {
+  constructor(private cityService: CittaService,private router:Router, config: NgbModalConfig, private modal: NgbModal) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -78,5 +79,8 @@ export class AutocompleteCityComponent implements OnInit {
     this.modalCity = city;
     this.modal.open(content, {centered: true });
 
+  }
+  linkToReview(idCity:number){
+    this.router.navigate(['review',idCity])
   }
 }

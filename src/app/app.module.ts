@@ -15,6 +15,7 @@ import { NazioniService } from './services/nazioni.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AutocompleteCityComponent } from './components/autocomplete-city/autocomplete-city.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReviewComponent } from './components/review/review.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CittaComponent,
     ModificaAggiungiComponent,
     AutocompleteCityComponent,
+    ReviewComponent,
 
 
   ],

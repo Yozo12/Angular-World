@@ -5,6 +5,7 @@ import { NazioniComponent } from './components/nazioni/nazioni.component';
 import { CittaComponent } from './components/citta/citta.component';
 import { ModificaAggiungiComponent } from './components/modifica-aggiungi/modifica-aggiungi.component';
 import { AutocompleteCityComponent } from './components/autocomplete-city/autocomplete-city.component';
+import { ReviewComponent } from './components/review/review.component';
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'modifica-aggiungi',
     component: ModificaAggiungiComponent
+  },
+  {
+    path: 'review/:idcity',
+    component: ReviewComponent
   }
 ];
 

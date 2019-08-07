@@ -1,0 +1,18 @@
+.color{
+    color:wheat
+}
+.modal-header  {
+    background-color:gold;
+    color: rgb(129, 129, 134);
+  }
+ 
+  
+  .modal-body{
+    background-color:rgba(255, 217, 0, 0.116);
+    color: rgb(129, 129, 134);
+
+  }
+  .modal-footer{
+    background-color:rgba(13, 14, 13, 0.575);
+    color: rgb(129, 129, 134);
+  }

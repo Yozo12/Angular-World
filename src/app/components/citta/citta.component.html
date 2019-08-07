@@ -32,10 +32,33 @@
         <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
             <td> <button (click)="deleteCity(c.id)" class="btn btn-secondary text-warning">elimina</button></td>
             <tr></tr>
-            <td>{{c.name}}</td><br>
-            <td>Popolazione:  {{c.population}}</td>
+            <td>
+                <h1><span class=" text-warning " style="cursor: pointer" (click)="open(content,c)"> ► {{c.name}}</span>
+                </h1>
+            </td><br>
+            <td>
+                <h2> {{c.population}}</h2>
+            </td>
             <tr></tr>
             <td><button (click)=" goToModPage(c.id)" class="btn btn-secondary text-warning">modifica</button></td>
         </div>
+        <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title"><span
+                        class="badge badge-secondary text-warning">{{modalCity.name}}</span></h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span class="badge badge-secondary text-warning" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <p class="stretched-link text-warning btn btn-secondary " (click)=" linkToReview(modalCity.id)"
+                    (click)="c('Cross click')" style="cursor: pointer"> ► Recensioni Città
+                    {{modalCity.name}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-warning" (click)="c('Cross click')">Close</button>
+            </div>
+        </ng-template>
+
 
     </body>

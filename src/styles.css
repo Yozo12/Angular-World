@@ -1,2 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body{
+    background:rgba(255, 217, 0, 0.651);
+}

@@ -1,0 +1,7 @@
+<div *ngIf="directive">
+
+    <p *ngFor="let a of alert">
+        <ngb-alert [type]="a.type" (close)="close(alert)"><strong>Whoa!</strong> {{ a.message }}</ngb-alert>
+    </p>
+ 
+</div>

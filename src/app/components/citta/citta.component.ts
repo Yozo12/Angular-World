@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NazioniService } from 'src/app/services/nazioni.service';
 import { Constant } from 'src/app/const/constant';
 import { Country } from 'src/app/model/country';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -17,10 +18,15 @@ export class CittaComponent implements OnInit {
   nation: Country[];
   AZ = Constant.AZ;
   POPA = Constant.POPA;
+  modalCity: City;
   constructor(private cityService: CittaService,
     private route: ActivatedRoute,
     private router: Router,
-    private nationService: NazioniService) { }
+    private nationService: NazioniService,
+    private config: NgbModalConfig, private modal: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
 
   ngOnInit() {
@@ -88,5 +94,13 @@ export class CittaComponent implements OnInit {
 
     });
 
+  }
+  open(content, city: City, ) {
+    this.modalCity = city;
+    this.modal.open(content, { centered: true });
+
+  }
+  linkToReview(idCity: number) {
+    this.router.navigate(['review', idCity])
   }
 }
