@@ -1,22 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from 'src/app/model/city';
 import { CittaService } from 'src/app/services/citta.service';
-import { VirtualTimeScheduler } from 'rxjs';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-autocomplete-city',
   templateUrl: './autocomplete-city.component.html',
-  styleUrls: ['./autocomplete-city.component.css']
+  styleUrls: ['./autocomplete-city.component.css'],
+  providers: [NgbModalConfig, NgbModal],
+  styles: [`
+    .dark-modal .modal-content {
+      background-color: #292b2c;
+      color: white;
+    }
+    .dark-modal .close {
+      color: white;
+    }
+    .light-blue-backdrop {
+      background-color: #5cb3fd;
+    }
+  `]
+
 })
 export class AutocompleteCityComponent implements OnInit {
   city: City[];
   cityLike: City[];
   drop: boolean;
   text: string;
+  modalCity: City;
 
-  constructor(private cityService: CittaService) { }
+  constructor(private cityService: CittaService, config: NgbModalConfig, private modal: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   ngOnInit() {
+
     this.drop = false;
     this.city = [];
     this.cityLike = []
@@ -54,5 +73,10 @@ export class AutocompleteCityComponent implements OnInit {
   }
   cityByID(id: number) {
     this.cityService.loadCity(id)
+  }
+  open(content, city: City, ) {
+    this.modalCity = city;
+    this.modal.open(content, {centered: true });
+
   }
 }

@@ -16,19 +16,38 @@
             </table>
             <div *ngIf="drop" class="dropdown">
                 <div class="state" align="center" *ngFor="let c of cityLike  ">
-                    <p style="cursor: pointer" (click)=" saveTextSearch(c.name)"> {{c.name}} </p>
+                    <p style="cursor: pointer" (click)=" saveTextSearch(c.name)">{{c.name}} </p>
                 </div>
             </div>
 
 
         </div>
     </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title"><span
+                    class="badge badge-secondary text-warning">{{modalCity.name}}</span></h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span class="badge badge-secondary text-warning" aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body ">
+            <p class="stretched-link text-warning btn btn-secondary " style="cursor: pointer"> ► Recensioni Città
+                {{modalCity.name}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary text-warning" (click)="c('Cross click')">Close</button>
+        </div>
+    </ng-template>
+
     <table align="center">
         <tr>
             <td>
                 <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
-                    {{c.name}}</div>
+                    <button class="btn btn-secondary text-warning" (click)="open(content,c)"> {{c.name}}</button></div>
             </td>
         </tr>
     </table>
+
 </body>

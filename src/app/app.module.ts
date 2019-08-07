@@ -14,7 +14,7 @@ import { ContinentServiceService } from './services/continent-service.service';
 import { NazioniService } from './services/nazioni.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AutocompleteCityComponent } from './components/autocomplete-city/autocomplete-city.component'
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -36,6 +36,7 @@ import { AutocompleteCityComponent } from './components/autocomplete-city/autoco
     HttpClientModule,
     FormsModule,
     BrowserModule,
+    NgbModule
   ],
   providers: [ContinentServiceService, NazioniService, CittaService],
   bootstrap: [AppComponent]

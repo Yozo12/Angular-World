@@ -32,8 +32,8 @@
         <div align="center" *ngFor="let c of city  " class="list-group-item list-group-item-warning text- ">
             <td> <button (click)="deleteCity(c.id)" class="btn btn-secondary text-warning">elimina</button></td>
             <tr></tr>
-            <td>{{c.name}}</td>
-            <td>{{c.population}}</td>
+            <td>{{c.name}}</td><br>
+            <td>Popolazione:  {{c.population}}</td>
             <tr></tr>
             <td><button (click)=" goToModPage(c.id)" class="btn btn-secondary text-warning">modifica</button></td>
         </div>
