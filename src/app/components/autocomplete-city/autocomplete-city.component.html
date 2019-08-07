@@ -7,9 +7,13 @@
             </strong><br>
             <div align="left"> <button [routerLink]="['']" class="btn btn-secondary text-warning"> torna alla home
                 </button></div><br>
-
-            <div align="right"><input (click)="notDrop()" value="{{text}}" type="text" class="form-control"
-                    placeholder="Search City" (input)="ShearchCity($event.target.value)"></div>
+            <table>
+                <td> <i class="fa fa-search  " size="15px"></i></td>
+                <td>
+                    <div align="right"><input (click)="notDrop()" type="text" class="form-control"
+                            placeholder="Search City" (input)="ShearchCity($event.target.value)"></div>
+                </td>
+            </table>
             <div *ngIf="drop" class="dropdown">
                 <div class="state" align="center" *ngFor="let c of cityLike  ">
                     <p style="cursor: pointer" (click)=" saveTextSearch(c.name)"> {{c.name}} </p>

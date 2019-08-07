@@ -59,12 +59,12 @@ export class CittaComponent implements OnInit {
   }
   ordinaCity(ord: string) {
     this.cityService.ordinaCity(this.nationService.currentNation, ord).subscribe((res) => {
-      if (ord == (Constant.AZ)) {
+      if (ord === Constant.AZ) {
         this.AZ = Constant.ZA;
       } else {
         this.AZ = Constant.AZ;
       }
-      if (ord == (Constant.POPA)) {
+      if (ord === Constant.POPA) {
         this.POPA = Constant.POPD;
       } else {
         this.POPA = Constant.POPA;

@@ -33,21 +33,22 @@ export class AutocompleteCityComponent implements OnInit {
     })
   };
   ShearchCity(initial: String) {
-    this.cityService.getCitiesByLike(initial).subscribe((res) => {
-      this.cityLike = res.body as City[];
-      this.city = res.body as City[];
-    })
+    if (initial === "" || initial === null) {
+      this.showAllCities()
+      this.cityLike = [];
+    } else {
+      this.cityService.getCitiesByLike(initial).subscribe((res) => {
+        this.cityLike = res.body as City[];
+        this.city = res.body as City[];
+      })
+    }
   }
   notDrop() {
     this.drop = !this.drop;
   }
   saveTextSearch(text: string) {
     this.text = text;
-    if (this.text =null) {
-
-      this.showAllCities()
-    }
-    else { this.ShearchCity(this.text) }
+    this.ShearchCity(this.text)
     this.drop = !this.drop;
 
   }
