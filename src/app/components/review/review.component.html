@@ -1,7 +1,85 @@
 <div *ngIf="directive">
-
-    <p *ngFor="let a of alert">
-        <ngb-alert [type]="a.type" (close)="close(alert)"><strong>Whoa!</strong> {{ a.message }}</ngb-alert>
-    </p>
- 
+    <div class="alert alert-warning" *ngFor="let a of alert"> <strong>Attenzione</strong>
+        <h3>non sei loggato!</h3>
+        <span class=" text-warning " style="cursor: pointer" (click)="open(content)"><button
+                class="btn btn-secondary text-warning">Registrati!</button>
+        </span>
+        <div align="center"> <span class="text-warning" style="cursor: pointer" (click)="open(loginform)">Login!
+            </span></div>
+    </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"><span
+                class="badge badge-secondary text-warning">Registrazione</span></h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span class="badge badge-secondary text-warning" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body ">
+
+        <table>
+            <tr>
+                <td><span class="badge badge-secondary text-warning"> Nome:</span> <input type="text"
+                        placeholder="Username" [(ngModel)]="name"><br>
+
+                    <div *ngIf="key" class="alert alert-dangertwo" role="alert">
+                        Nome già occupato
+                        <button type="button" (click)="changeKey()" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> </div>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-secondary text-warning"> Password:</span> <input type="password"
+                        placeholder="password" [(ngModel)]="pass1"></td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-secondary text-warning">Ripeti la Password:</span> <input type="password"
+                        placeholder="password" [(ngModel)]="pass2"><br>
+                    <div *ngIf="trigger" class="alert alert-success" role="alert">
+                        Utente registrato!
+                        <button type="button" (click)="changeTrigger()" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> </div>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" [(ngModel)]="idAuthor">
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-warning"
+            (click)="saveAuthor(name,idAuthor,pass1,pass2)">Salva</button>
+    </div>
+</ng-template>
+
+<ng-template #loginform let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"><span class="badge badge-secondary text-warning">Login</span>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span class="badge badge-secondary text-warning" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body ">
+
+        <table>
+            <tr>
+                <td><span class="badge badge-secondary text-warning"> Nome:</span> <input type="text"
+                        placeholder="Username" [(ngModel)]="name"><br>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-secondary text-warning"> Password:</span> <input type="password"
+                        placeholder="password" [(ngModel)]="pass"></td>
+            </tr>
+        </table>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-warning" (click)="login()"> Login </button>
+    </div>
+</ng-template>

@@ -62,17 +62,30 @@ export class CittaService {
   }
   insertAuthor(author: Author): Observable<any> {
 
-    let resp = this.http.post<any>('http://localhost:8080//insertauthor', author, { observe: 'response' });
+    let resp = this.http.post<any>('http://localhost:8080/insertauthor', author, { observe: 'response' });
     return resp;
   }
   getCitiesByLike(name: String): Observable<any> {
 
-    let resp = this.http.get<any>('http://localhost:8080//citylike?name=' + name, { observe: 'response' });
+    let resp = this.http.get<any>('http://localhost:8080/citylike?name=' + name, { observe: 'response' });
     return resp;
   }
   allCitiesFromWorld(): Observable<any> {
 
-    let resp = this.http.get<any>('http://localhost:8080//allcities', { observe: 'response' });
+    let resp = this.http.get<any>('http://localhost:8080/allcities', { observe: 'response' });
     return resp;
+  }
+  findAuthorName(name: String): Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/authorbyname?name=' + name);
+    console.log(resp);
+    return resp;
+  }
+  login(name: string, pass: string): Observable<any> {
+
+    let resp = this.http.get<any>('http://localhost:8080/login?name=' + name + '&pass=' + pass, { observe: 'response' });
+    console.log(resp);
+    return resp;
+
   }
 }

@@ -24,8 +24,8 @@ export class CittaComponent implements OnInit {
     private router: Router,
     private nationService: NazioniService,
     private config: NgbModalConfig, private modal: NgbModal) {
-    config.backdrop = 'static';
-    config.keyboard = false;
+   this. config.backdrop = 'static';
+   this. config.keyboard = false;
   }
 
 
